@@ -1,0 +1,40 @@
+# Feature-extraction configuration
+# MLHC 2026 — "Human-AI Deferral under Limited Expert Availability"
+#
+# Copy this file and edit the paths for your environment. Paths may be absolute
+# or relative to the directory you run extract_features.py from.
+
+# --- Inputs ---------------------------------------------------------------
+# Directory containing one sub-directory per case, each with WAVEFORM/ and
+# ANNOTATION/ folders (see the module docstring for the expected layout).
+input_parsed_path: ./data/cases
+
+# Metadata table (CSV). Must include: Case ID, Procedure notes (L/R/Both),
+# EEG change start time, EEG change end time.
+input_meta_path: ./data/metadata.csv
+
+# Optional: restrict or order which cases are processed. Either a pickle file
+# containing a list of case-directory paths, or a newline-delimited text file
+# of case-directory paths. Omit (or leave commented) to process every
+# sub-directory found under input_parsed_path.
+# case_list_path: ./data/case_list.txt
+
+# --- Procedure ------------------------------------------------------------
+procedure: CEA            # only CEA is supported in this release
+
+# --- Filtering ------------------------------------------------------------
+l_freq: 0.5               # band-pass low cutoff (Hz)
+h_freq: 45                # band-pass high cutoff (Hz)
+
+# --- Windowing ------------------------------------------------------------
+# Non-overlapping 20-second intervals over a 10-minute post-clamp window give
+# the 30 intervals per case used in the paper. Set epoch_stride < epoch_size
+# for overlapping windows.
+epoch_size: 20            # analysis window length (s)
+epoch_stride: 20          # window hop (s)
+duration: 600             # seconds of post-clamp signal to process; null = all
+baseline_length: 120      # length of the artifact-free baseline window (s)
+
+# --- Optional -------------------------------------------------------------
+# Precomputed population-level baseline (experimental; verify CSV schema).
+# population_baselines: null
