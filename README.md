@@ -1,4 +1,4 @@
-# Human–AI Deferral under Limited Expert Availability
+# Human–AI Deferral under Limited Expert Availability: A Study in Intraoperative Ischemia Detection
 
 Code for the paper **"Human–AI Deferral under Limited Expert Availability: A Study in Intraoperative Ischemia Detection"**, *Proceedings of Machine Learning Research* **340**:1–36, 2026 (Machine Learning for Healthcare, MLHC 2026).
 
