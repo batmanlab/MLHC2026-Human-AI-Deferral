@@ -4,7 +4,7 @@ Code for the paper **"Human–AI Deferral under Limited Expert Availability: A S
 
 Nihal Murali (University of Pittsburgh), Karim Elzokm (Boston University), Parthasarathy Thirumala (University of Pittsburgh), Kayhan Batmanghelich† (Boston University), and Shyam Visweswaran† (University of Pittsburgh). *(† equal senior contribution. Contact: Nihal Murali, nihal.murali@pitt.edu.)*
 
-This repository contains the implementation of **Learning to Augment (L2A)** — a soft-deferral method that selectively blends novice human predictions with an AI model to detect cerebral ischemia during carotid endarterectomy (CEA) from continuous EEG (cEEG) — along with the deferral baselines, the cEEG feature-extraction pipeline, and the analysis and plotting code used to produce the figures in the paper.
+This repository contains the implementation of **Learning to Augment (L2A)**: a soft-deferral method that selectively blends novice human predictions with an AI model to detect cerebral ischemia during carotid endarterectomy (CEA) from continuous EEG (cEEG); along with the deferral baselines, the cEEG feature-extraction pipeline, and the analysis and plotting code used to produce the figures in the paper.
 
 > **Status:** This repository is being organized for public release alongside the camera-ready paper. The core method, baselines, and analysis scripts are included. Some supporting components (AI-model training and dataset assembly, cross-novice transfer, monitor-onboarding data-efficiency, novice-agreement analysis, and a synthetic-data generator) are being finalized, and the scripts currently reference absolute paths that need to be set for a given environment. See [Reproducibility notes](#reproducibility-notes).
 
