@@ -1,0 +1,29 @@
+# Conda environment — MLHC 2026 "Human-AI Deferral under Limited Expert Availability"
+#
+#   conda env create -f environment.yml
+#   conda activate mlhc2026-deferral
+#
+# Pinned versions reflect the tested environment. tsai is pip-only and pulls in
+# fastai/torch; the optional gradient-boosting backbones are commented out.
+name: mlhc2026-deferral
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas=3.0.2
+  - scipy
+  - scikit-learn=1.8.0
+  - matplotlib=3.10.8
+  - tqdm
+  - bottleneck
+  - joblib
+  - pyyaml
+  - pytorch
+  - pip
+  - pip:
+      - tsai
+      # Optional — only needed for l2a.py --ml_model xgb / lgb:
+      # - xgboost
+      # - lightgbm
