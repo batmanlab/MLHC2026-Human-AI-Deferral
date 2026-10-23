@@ -1,0 +1,38 @@
+# Python dependencies — MLHC 2026 "Human-AI Deferral under Limited Expert Availability"
+#
+#   pip install -r requirements.txt
+#
+# Pinned versions reflect the tested environment; relax them if you hit
+# solver conflicts. Dependencies are grouped by which scripts need them, so
+# you can install a subset (e.g. skip the feature-extraction group if you are
+# only running L2A / baselines / figures on an existing data table).
+
+# --- Core: l2a.py, run_baselines.py, and the analysis scripts --------------
+numpy
+pandas==3.0.2          # >= 2.1 required (DataFrame.map replaces applymap)
+scipy
+scikit-learn==1.8.0
+matplotlib==3.10.8
+tqdm
+
+# --- Deep-learning backend: run_baselines.py MLP methods -------------------
+# Also pulled in transitively by tsai. GPU builds may require the official
+# PyTorch index (see https://pytorch.org/get-started/locally/).
+torch
+
+# --- Feature extraction only: extract_features.py --------------------------
+bottleneck
+joblib
+pyyaml
+tsai                   # provides SlidingWindow; heavy (installs fastai/torch)
+
+# --- Optional AI backbones for the L2A weight model (l2a.py --ml_model) -----
+# Uncomment only if you pass --ml_model xgb or --ml_model lgb.
+# xgboost
+# lightgbm
+
+# --- Not pip-installable (clone separately) --------------------------------
+# run_baselines.py imports its five baselines from a local clone of
+#   https://github.com/clinicalml/human_ai_deferral   (pass via --repo_path)
+# DaF-base / DaF-ext are produced from
+#   https://github.com/AminChrs/BeyondDefer
